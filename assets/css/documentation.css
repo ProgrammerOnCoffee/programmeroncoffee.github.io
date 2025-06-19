@@ -1,0 +1,83 @@
+﻿/*********************************************************/
+/*                   documentation.css                   */
+/*                                                       */
+/*        CSS styles used in documentation pages,        */
+/*            such as code samples and notes.            */
+/*********************************************************/
+
+.doc {
+	text-align: left;
+}
+
+/* Keys & Code Samples */
+kbd, code {
+	background-color: var(--code_color);
+	border-radius: 3px;
+	font-family: "JetBrains Mono", monospace;
+	padding: 0px 3px;
+}
+pre {
+	tab-size: 4;
+	margin: 2px 0px;
+}
+.codeblock {
+	background-color: var(--code_color);
+	border-radius: 5px;
+	font-family: "JetBrains Mono", monospace;
+	padding: 10px;
+	margin: 10px 0px;
+	code {
+		background: none;
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+/* GDScript Syntax Highlighting */
+span.symbol { color: #abc9ff; }
+span.keyword { color: #ff7085; }
+span.control_flow_keyword { color: #ff8ccc; }
+span.base_type { color: #42ffc2; }
+span.engine_type { color: #8fffdb; }
+span.user_type { color: #c7ffed; }
+span.comment { color: #cdcfd280; }
+span.doc_comment { color: #99b3cccc; }
+span.string { color: #ffeda1; }
+
+span.number { color: #a1ffe0; }
+span.function { color: #57b3ff; }
+span.member_variable { color: #bce0ff; }
+
+span.function_definition { color: #66e6ff; }
+span.global_function { color: #a3a3f5; }
+span.node_path { color: #b8c47d; }
+span.node_reference { color: #63c259; }
+span.annotation { color: #ffb373; }
+span.string_name { color: #ffc2a6; }
+
+/* Notes */
+.note, .important {
+	display: inline-block;
+	border: solid 4px transparent;
+	width: 100%;
+	padding: 10px 10px 0px 10px;
+}
+.note::before, .important::before {
+	font-family: "JetBrains Mono", monospace;
+	font-size: larger;
+	font-weight: bold;
+}
+.note {
+	border-left-color: dodgerblue;
+}
+.note::before {
+	color: dodgerblue;
+	content: "Note";
+}
+.important {
+	border-left-color: mediumpurple;
+}
+.important::before {
+	color: mediumpurple;
+	content: "Important";
+}

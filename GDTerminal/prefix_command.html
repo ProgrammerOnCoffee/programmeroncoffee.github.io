@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<link href="assets/images/favicon.png" rel="icon" />
+	<link href="../assets/css/global.css" rel="stylesheet" />
+	<link href="../assets/css/documentation.css" rel="stylesheet" />
+	<script src="../assets/js/global.js" defer></script>
+	<script src="assets/js/gdterminal.js" defer></script>
+	<title>Prefix Command - GDTerminal - ProgrammerOnCoffee</title>
+</head>
+<body>
+	<main class="doc">
+		<h1>Prefix Command</h1>
+		<p>
+			GDTerminal allows you to mark one saved command as a "Prefix" command,
+			which means that its contents will be <abbr title="Added before">prepended</abbr> before any other code you run.
+		</p>
+		<p>
+			As an example, if you set the prefix command to
+			<code><span class="global_function">print</span><span class="symbol">(<span class="string">"Hello world!"</span>)</span></code>,
+			that <code><span class="global_function">print</span></code> statement will be prepended before all code that you run.
+			Running <code><span class="global_function">print</span><span class="symbol">(<span class="string">"Goodbye world!"</span>)</span></code>
+			would then print <code><span class="string">"Hello world!"</span></code> <em>and</em> <code><span class="string">"Goodbye world!"</span></code> in the output.
+		</p>
+
+		<h2>Usage</h2>
+		<p>This feature can be used to store common variables or functions in a single place because they can then be accessed by anything you run.</p>
+		<div class="codeblock">
+			<span class="comment"># Prefix command</span><br />
+			<span class="keyword">var</span> selected_nodes <span class="symbol">= <span class="engine_type">EditorInterface</span>.<span class="function">get_selection</span>().<span class="function">get_selected_nodes</span>()</span><br />
+			<span class="keyword">var</span> is_control <span class="symbol">= <span class="keyword">func</span>(</span>node<span class="symbol">):</span>
+			<pre><code>	<span class="keyword">return</span> node <span class="keyword">is</span> <span class="engine_type">Control</span></code></pre>
+		</div>
+		<div class="codeblock">
+			<span class="comment">
+				# Now "selected_nodes" and "is_control"<br />
+				# can be accessed whenever you run code
+			</span><br />
+			<span class="control_flow_keyword">for</span> node <span class="control_flow_keyword">in</span> selected_nodes<span class="symbol">:</span><br />
+			<pre><code>	<span class="global_function">print</span><span class="symbol">(</span>is_control<span class="symbol">.<span class="function">call</span>(</span>node<span class="symbol">))</span></code></pre>
+		</div>
+
+		<h2>Setting the Prefix Command</h2>
+		<p>To set the prefix command, open the saved commands panel and rename a command to <code>Prefix</code>.</p>
+		<div class="note">
+			<p>Only the first command named <kbd>Prefix</kbd> will be used when running code - all others will be ignored.</p>
+		</div>
+	</main>
+</body>
+</html>

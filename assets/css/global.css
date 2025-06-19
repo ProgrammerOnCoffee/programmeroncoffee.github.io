@@ -1,0 +1,156 @@
+/*********************************************************/
+/*                       global.css                      */
+/*                                                       */
+/*        CSS styles used across the entire site.        */
+/*********************************************************/
+
+/* Fonts */
+@font-face {
+	font-family: "Noto Sans";
+	src: url("/assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Noto Sans";
+	src: url("/assets/fonts/Noto_Sans/NotoSans-Italic.ttf");
+	font-style: italic;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Noto Sans";
+	src: url("/assets/fonts/Noto_Sans/NotoSans-Bold.ttf");
+	font-style: normal;
+	font-weight: bold;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("/assets/fonts/JetBrains_Mono/JetBrainsMono-Regular.ttf");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "JetBrains Mono";
+	src: url("/assets/fonts/JetBrains_Mono/JetBrainsMono-Bold.ttf");
+	font-style: normal;
+	font-weight: bold;
+}
+
+:root {
+	--text_color: #f7f7f7;
+	--link_color: #8268e8;
+	--code_color: #392d48;
+	--light_link_color: color-mix(in oklab, var(--link_color), white 25%);
+	--bg_primary: #32283f;
+	--bg_secondary: color-mix(in oklab, var(--bg_primary), black 75%);
+	
+	background: linear-gradient(-0.125turn, var(--bg_secondary), var(--bg_primary)) no-repeat;
+	color: var(--text_color);
+	font-family: "Noto Sans", sans-serif;
+	text-align: center;
+	min-height: 100vh;
+}
+body {
+	display: inline-flex;
+	flex-direction: column;
+	padding: 0px;
+	margin: 0px 16px;
+	min-height: 100vh;
+
+	hr {
+		width: 100%;
+	}
+}
+/* Shrink content on large screens */
+@media (width >= 896px) {
+	body {
+		width: min(50%, 768px);
+	}
+}
+
+main {
+	flex-grow: 1;
+	margin: 0px 10px;
+}
+.center {
+	align-content: center;
+}
+header, footer {
+	flex-grow: 0;
+	flex-shrink: 0;
+}
+header {
+	margin-top: 8px;
+}
+footer {
+	margin-bottom: 8px;
+}
+footer > * {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+img {
+	max-width: 100%;
+}
+.screenshots {
+	padding: 15px;
+	img {
+		border-radius: 5px;
+		width: 100%;
+	}
+}
+
+li {
+	margin: 5px 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "JetBrains Mono", monospace;
+}
+
+/* Link styles */
+a {
+	color: var(--link_color);
+	padding: 5px;
+	text-wrap-mode: nowrap;
+}
+a:hover {
+	text-decoration: none;
+	color: var(--bg_primary);
+	border-radius: 5px;
+	background-color: var(--link_color);
+}
+abbr {
+	text-decoration-color: var(--link_color);
+}
+
+.columns {
+	display: inline-grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+/* Projects & Features */
+.feature_wrapper {
+	display: inline-grid;
+	width: min(100%, 512px);
+	grid-template-columns: 1fr 1fr;
+}
+.feature, .project {
+	margin: 10px;
+	padding: 15px;
+	border-radius: 10px;
+	transition-duration: 500ms;
+	border: solid 2px var(--link_color);
+	background-color: #ffffff0f;
+	h3 {
+		text-align: center;
+	}
+}
+.feature:hover, .project:hover {
+	scale: 1.01;
+	transform: translateY(-5px);
+	border-color: var(--light_link_color);
+	box-shadow: 0 0 15px 1.5px var(--light_link_color) !important;
+}

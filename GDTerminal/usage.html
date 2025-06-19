@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<link href="assets/images/favicon.png" rel="icon" />
+	<link href="../assets/css/global.css" rel="stylesheet" />
+	<link href="../assets/css/documentation.css" rel="stylesheet" />
+	<script src="../assets/js/global.js" defer></script>
+	<script src="assets/js/gdterminal.js" defer></script>
+	<title>Usage - GDTerminal - ProgrammerOnCoffee</title>
+</head>
+<body>
+	<main class="doc">
+		<h1>Usage</h1>
+		<h2>Basic Usage</h2>
+		<ul>
+			<li>Navigate to the plugin dock. By default, it is placed in the bottom left dock slot.</li>
+			<li>Write anything in GDScript, e.g. <code><span class="global_function">print</span><span class="symbol">(<span class="string">"Hello world!"</span>)</span></code></li>
+			<li>Click <kbd>Run</kbd></li>
+		</ul>
+		<div class="important">
+			<p>All code you write is run in the editor. Ensure that code you run will not have unintended consequences.</p>
+			<p>If, for example, your code contains an infinite loop, the editor will hang and you may lose data.</p>
+			<div class="codeblock">
+				<span class="control_flow_keyword">while</span> <span class="keyword">true</span><span class="symbol">:</span><br />
+				<pre><code>	<span class="control_flow_keyword">pass</span> <span class="comment"># Do not attempt!</span></code></pre>
+			</div>
+		</div>
+
+		<h2>Editing the Open Scene</h2>
+		<p>
+			When you click <kbd>Run</kbd>, your code is copied into the
+			<code><span class="function_definition">_ready</span></code>
+			function of a new node. If a scene is open, this node is parented to the
+			scene's root. Otherwise, it is parented to the <em>editor's</em> root.
+		</p>
+
+		<p>This behavior allows you to modify the open scene with code that you run.</p>
+		<div class="codeblock">
+			<span class="comment"># Get the root node's children</span><br />
+			<span class="keyword">var</span> children <span class="symbol">= <span class="node_reference">$".."</span>.<span class="function">get_children</span>()</span><br />
+			<span class="control_flow_keyword">for</span> i <span class="control_flow_keyword">in</span> children<span class="symbol">.<span class="function">size</span>():</span><br />
+			<pre><code>	children<span class="symbol">[</span>i<span class="symbol">].<span class="member_variable">position<span class="symbol">.</span>x</span> =</span> i <span class="symbol">*</span> <span class="number">64.0</span></code></pre>
+		</div>
+
+		<div class="note">
+			<p>Always start <kbd><span class="node_reference">node references</span></kbd> with <code><span class="node_reference">$".."</span></code> to get the scene's root node.</p>
+			<div class="codeblock">
+				<span class="keyword">var</span> node <span class="symbol">=</span> <span class="node_reference">$".."/Path/To/Node</span>
+			</div>
+			<p>Similarly, always start <kbd><span class="base_type">NodePaths</span></kbd> with <code><span class="node_path">^".."</span></code>.</p>
+			<div class="codeblock">
+				<span class="keyword">var</span> node <span class="symbol">= <span class="function">get_node</span>(<span class="node_path">^"../Path/To/Node"</span>)</span>
+			</div>
+			<p>
+				Also note that the <code><span class="annotation">@onready</span></code> annotation is not needed
+				because code is pasted into the <code><span class="function_definition">_ready</span></code> function.
+			</p>
+		</div>
+
+		<h2>Limitations</h2>
+		<p>Below is a list of some of GDTerminal's limitations.</p>
+		<ul>
+			<li><b>Changes made with code cannot be undone.</b></li>
+			<li>While existing nodes can be edited and freed, new nodes cannot be added to the open scene.</li>
+			<li><code><span class="keyword">static</span></code> variables cannot be declared.</li>
+			<ul><li>You may want to look into the <a href="prefix_command.html">Prefix Command</a> instead.</li></ul>
+			<li>
+				<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#lambda-functions">Lambda functions</a>
+				must be used instead of normal functions.
+				<div class="codeblock">
+					<span class="comment"># Instead of this:</span><br />
+					<span class="keyword">func</span> <span class="function_definition">foo</span><span class="symbol">():</span><br />
+					<pre><code>	<span class="global_function">print</span><span class="symbol">(<span class="string">"bar"</span>)</span></code></pre>
+					<span class="function">foo</span><span class="symbol">()</span><br />
+					<br />
+					<span class="comment"># Do this:</span><br />
+					<span class="keyword">var</span> foo <span class="symbol">= <span class="keyword">func</span>():</span><br />
+					<pre><code>	<span class="global_function">print</span><span class="symbol">(<span class="string">"bar"</span>)</span></code></pre>
+					foo<span class="symbol">.<span class="function">call</span>()</span>
+				</div>
+			</li>
+		</ul>
+	</main>
+</body>
+</html>

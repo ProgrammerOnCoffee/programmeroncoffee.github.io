@@ -1,0 +1,16 @@
+﻿.project {
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    
+    h2 {
+       margin: 0px;
+    }
+    img {
+        border-radius: 5px;
+    }
+    div {
+        margin: 0px 20px;
+        text-align: left;
+    }
+}

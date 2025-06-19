@@ -1,0 +1,11 @@
+<header>
+	<img src="/GDTerminal/assets/images/banner.webp" alt="GDTerminal banner" />
+	<nav>
+		<a href="/GDTerminal/">About</a>
+		<a href="/GDTerminal/installation.html">Installation</a>
+		<a href="/GDTerminal/usage.html">Usage</a>
+		<a href="/GDTerminal/saving_commands.html">Saving Commands</a>
+		<a href="/GDTerminal/prefix_command.html">Prefix Command</a>
+	</nav>
+</header>
+<hr />

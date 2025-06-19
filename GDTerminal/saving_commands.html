@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<link href="assets/images/favicon.png" rel="icon" />
+	<link href="../assets/css/global.css" rel="stylesheet" />
+	<link href="../assets/css/documentation.css" rel="stylesheet" />
+	<script src="../assets/js/global.js" defer></script>
+	<script src="assets/js/gdterminal.js" defer></script>
+	<title>Saving Commands - GDTerminal - ProgrammerOnCoffee</title>
+</head>
+<body>
+	<main class="doc">
+		<h1>Saving Commands</h1>
+		<p>GDTerminal allows you to save an unlimited number of code samples ("commands") for quick future use.</p>
+		<h2>Saving a Command</h2>
+		<ol>
+			<li>Write the code you want to save in the main view</li>
+			<li>Open the saved commands panel</li>
+			<li>Click <kbd>Add Current Command</kbd></li>
+			<li>Optionally rename the command to help yourself identify it later</li>
+		</ol>
+
+		<h2>Using Saved Commands</h2>
+		<p>In the saved commands panel, to the right of each command's name, there are three buttons.</p>
+
+		<h3>Run</h3>
+		<p>The <kbd>Run</kbd> button will run the command, just as if you wrote it in the main view and clicked the main run button.</p>
+		<p>Any code already written in the main <kbd>CodeEdit</kbd> will <b>not</b> be cleared.</p>
+
+		<h3>Load</h3>
+		<p>The <kbd>Load</kbd> button will copy the command and load it into the main view, clearing any existing code.</p>
+		<div class="note">
+			<p>You may press <kbd>Ctrl+Z</kbd> when the main <kbd>CodeEdit</kbd> is focused to recover the code you had previously.</p>
+		</div>
+
+		<h3>Delete</h3>
+		<p>The <kbd>Delete</kbd> button will mark the command as deleted. When pressed, it will change into an <kbd>Undo</kbd> button, which can be pressed again to recover the command.</p>
+		<p>Commands will only be deleted when the saved commands panel is closed, giving you a chance to recover them in case you accidentally click delete.</p>
+
+		<h2>Editing Saved Commands</h2>
+		<p>There is not currently a way to <em>edit</em> saved commands, but you can follow the steps below to reach the same goal:</p>
+		<ol>
+			<li>Open the saved commands panel</li>
+			<li>Load the command you would like to edit</li>
+			<li>Make your changes to the command</li>
+			<li>Re-open the saved commands panel</li>
+			<li>Click <kbd>Add Current Command</kbd></li>
+			<li>Give the new command the same name as the old command</li>
+			<li>Delete the old command</li>
+		</ol>
+	</main>
+</body>
+</html>

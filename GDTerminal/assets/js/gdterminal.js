@@ -1,0 +1,1 @@
+loadHTML("/GDTerminal/assets/header.txt", "afterbegin");

@@ -1,0 +1,5 @@
+<hr />
+<footer>
+	<img src="/assets/images/favicon.png" alt="ProgrammerOnCoffee Logo" />
+	<p>© 2025 ProgrammerOnCoffee •<a href="/">https://programmeroncoffee.github.io</a></p>
+</footer>
