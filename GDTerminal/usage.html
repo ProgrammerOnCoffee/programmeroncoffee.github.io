@@ -14,11 +14,11 @@
 	<main class="doc">
 		<h1>Usage</h1>
 		<h2>Basic Usage</h2>
-		<ul>
+		<ol>
 			<li>Navigate to the plugin dock. By default, it is placed in the bottom left dock slot.</li>
-			<li>Write anything in GDScript, e.g. <code><span class="global_function">print</span><span class="symbol">(<span class="string">"Hello world!"</span>)</span></code></li>
-			<li>Click <kbd>Run</kbd></li>
-		</ul>
+			<li>Write anything in GDScript, e.g. <code><span class="global_function">print</span><span class="symbol">(<span class="string">"Hello world!"</span>)</span></code>.</li>
+			<li>Click <kbd>Run</kbd>.</li>
+		</ol>
 		<div class="important">
 			<p>All code you write is run in the editor. Ensure that code you run will not have unintended consequences.</p>
 			<p>If, for example, your code contains an infinite loop, the editor will hang and you may lose data.</p>
@@ -26,16 +26,51 @@
 				<span class="control_flow_keyword">while</span> <span class="keyword">true</span><span class="symbol">:</span><br />
 				<pre><code>	<span class="control_flow_keyword">pass</span> <span class="comment"># Do not attempt!</span></code></pre>
 			</div>
+			<p>Also note that <b>code that you run cannot be reverted</b>.</p>
+			<p>
+				If, for example, you make unwanted changes to a scene,
+				you will need to close that scene without saving it in
+				order to undo those modifications. This will cause you
+				to lose any other unsaved changes you've made to the scene.
+			</p>
 		</div>
 
-		<h2>Editing the Open Scene</h2>
+		<h2>How Code Is Run</h2>
 		<p>
 			When you click <kbd>Run</kbd>, your code is copied into the
 			<code><span class="function_definition">_ready</span></code>
 			function of a new node. If a scene is open, this node is parented to the
 			scene's root. Otherwise, it is parented to the <em>editor's</em> root.
 		</p>
+		<p>
+			Remember that anything that won't work in the <code><span class="function_definition">_ready</span></code>
+			function won't work when running a command. The most common examples are outlined below.
+		</p>
+		<ul>
+			<li>
+				Keywords such as <code><span class="keyword">extends</span></code>,
+				<code><span class="keyword">class_name</span></code>,
+				and <code><span class="keyword">static</span></code> cannot be used.
+			</li>
+			<li>You can't override virtual functions such as <code><span class="function_definition">_process</span></code>.</li>
+			<li>
+				<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#lambda-functions">Lambda functions</a>
+				must be used instead of normal functions.
+				<div class="codeblock">
+					<span class="comment"># Instead of this:</span><br />
+					<span class="keyword">func</span> <span class="function_definition">foo</span><span class="symbol">():</span><br />
+					<pre><code>	<span class="global_function">print</span><span class="symbol">(<span class="string">"bar"</span>)</span></code></pre>
+					<span class="function">foo</span><span class="symbol">()</span><br />
+					<br />
+					<span class="comment"># Write this:</span><br />
+					<span class="keyword">var</span> foo <span class="symbol">= <span class="keyword">func</span>():</span><br />
+					<pre><code>	<span class="global_function">print</span><span class="symbol">(<span class="string">"bar"</span>)</span></code></pre>
+					foo<span class="symbol">.<span class="function">call</span>()</span>
+				</div>
+			</li>
+		</ul>
 
+		<h2>Editing the Open Scene</h2>
 		<p>This behavior allows you to modify the open scene with code that you run.</p>
 		<div class="codeblock">
 			<span class="comment"># Get the root node's children</span><br />
@@ -54,34 +89,20 @@
 				<span class="keyword">var</span> node <span class="symbol">= <span class="function">get_node</span>(<span class="node_path">^"../Path/To/Node"</span>)</span>
 			</div>
 			<p>
-				Also note that the <code><span class="annotation">@onready</span></code> annotation is not needed
-				because code is pasted into the <code><span class="function_definition">_ready</span></code> function.
+				The <code><span class="annotation">@onready</span></code> annotation is not needed because
+				code is pasted into the <code><span class="function_definition">_ready</span></code> function.
 			</p>
 		</div>
 
-		<h2>Limitations</h2>
-		<p>Below is a list of some of GDTerminal's limitations.</p>
-		<ul>
-			<li><b>Changes made with code cannot be undone.</b></li>
-			<li>While existing nodes can be edited and freed, new nodes cannot be added to the open scene.</li>
-			<li><code><span class="keyword">static</span></code> variables cannot be declared.</li>
-			<ul><li>You may want to look into the <a href="prefix_command.html">Prefix Command</a> instead.</li></ul>
-			<li>
-				<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#lambda-functions">Lambda functions</a>
-				must be used instead of normal functions.
-				<div class="codeblock">
-					<span class="comment"># Instead of this:</span><br />
-					<span class="keyword">func</span> <span class="function_definition">foo</span><span class="symbol">():</span><br />
-					<pre><code>	<span class="global_function">print</span><span class="symbol">(<span class="string">"bar"</span>)</span></code></pre>
-					<span class="function">foo</span><span class="symbol">()</span><br />
-					<br />
-					<span class="comment"># Do this:</span><br />
-					<span class="keyword">var</span> foo <span class="symbol">= <span class="keyword">func</span>():</span><br />
-					<pre><code>	<span class="global_function">print</span><span class="symbol">(<span class="string">"bar"</span>)</span></code></pre>
-					foo<span class="symbol">.<span class="function">call</span>()</span>
-				</div>
-			</li>
-		</ul>
-	</main>
+		<p>
+			Nodes that you add to scenes will not be saved or shown in the scene tree unless you set their
+			<a href="https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-property-owner" target="_blank">owner</a>.
+		</p>
+		<div class="codeblock">
+			<span class="keyword">var</span> new_node <span class="symbol">= <span class="engine_type">Node</span>.<span class="function">new</span>()</span><br />
+			<span class="node_reference">$".."</span><span class="symbol">.<span class="function">add_child</span>(</span>new_node<span class="symbol">)</span><br />
+			new_node<span class="symbol">.<span class="member_variable">owner</span> =</span> <span class="node_reference">$".."</span>
+		</div>
+</main>
 </body>
 </html>
