@@ -7,6 +7,13 @@ const projects = [
 		type: "tool",
 	},
 	{
+		name: "Orbis",
+		desc: "Orbital color matching game.<br />Winner of the Indie Den Godot Jam.",
+		img: "assets/images/orbis_cover_315px.webp",
+		href: "https://programmeroncoffee.itch.io/orbis",
+		type: "game",
+	},
+	{
 		name: "Ricochet",
 		desc: "Bullet-bouncing puzzle game.<br />Created for the Mini Code for a Cause jam.",
 		img: "assets/images/ricochet_cover_315px.webp",
