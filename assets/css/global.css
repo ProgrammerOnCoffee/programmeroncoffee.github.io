@@ -7,31 +7,44 @@
 /* Fonts */
 @font-face {
 	font-family: "Noto Sans";
-	src: url("/assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
+	font-display: swap;
+	src: url("/assets/fonts/Noto_Sans/NotoSans-Regular.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }
 @font-face {
 	font-family: "Noto Sans";
-	src: url("/assets/fonts/Noto_Sans/NotoSans-Italic.ttf");
+	font-display: swap;
+	src: url("/assets/fonts/Noto_Sans/NotoSans-Italic.ttf") format("truetype");
 	font-style: italic;
 	font-weight: normal;
 }
 @font-face {
 	font-family: "Noto Sans";
-	src: url("/assets/fonts/Noto_Sans/NotoSans-Bold.ttf");
+	font-display: swap;
+	src: url("/assets/fonts/Noto_Sans/NotoSans-Bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bold;
 }
 @font-face {
+	font-family: "Noto Sans-fallback";
+	size-adjust: 106.56%;
+	ascent-override: 97%;
+	descent-override: 26%;
+	src: local("Arial");
+}
+
+@font-face {
 	font-family: "JetBrains Mono";
-	src: url("/assets/fonts/JetBrains_Mono/JetBrainsMono-Regular.ttf");
+	font-display: swap;
+	src: url("/assets/fonts/JetBrains_Mono/JetBrainsMono-Regular.ttf") format("truetype");
 	font-style: normal;
 	font-weight: normal;
 }
 @font-face {
 	font-family: "JetBrains Mono";
-	src: url("/assets/fonts/JetBrains_Mono/JetBrainsMono-Bold.ttf");
+	font-display: swap;
+	src: url("/asssets/fonts/JetBrains_Mono/JetBrainsMono-Bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bold;
 }
@@ -46,7 +59,7 @@
 	
 	background: linear-gradient(-0.125turn, var(--bg_secondary), var(--bg_primary)) no-repeat;
 	color: var(--text_color);
-	font-family: "Noto Sans", sans-serif;
+	font-family: "Noto Sans", "Noto Sans-fallback";
 	text-align: center;
 	min-height: 100vh;
 }
