@@ -34,6 +34,7 @@ for (project of projects) {
 	outerDiv.className = "project";
 	const img = document.createElement("img");
 	img.src = project.img;
+	img.alt = project.name + " cover";
 	outerDiv.append(img);
 
 	const innerDiv = document.createElement("div");
