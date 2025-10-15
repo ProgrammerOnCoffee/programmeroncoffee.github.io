@@ -8,4 +8,4 @@ const loadHTML = async (path, position) => {
 	}
 }
 
-loadHTML("/assets/footer.txt", "beforeend");
+loadHTML("/assets/footer.html", "beforeend");
