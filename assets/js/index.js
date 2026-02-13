@@ -1,5 +1,13 @@
 const projects = [
 	{
+		name: "Flecto",
+		desc: "Flecto is a puzzle game where you shatter targets by bouncing bullets around each level. Place blocks and prisms in order to deflect and split bullets as they travel. Strategically use your limited tiles to destroy every target and complete each level.",
+		img: "assets/images/flecto_cover_315px.webp",
+		href: "https://store.steampowered.com/app/4143420?utm_source=coffee",
+		linktext: "Wishlist on Steam",
+		type: "game",
+	},
+	{
 		name: "GDTerminal",
 		desc: "GDTerminal is a <b>free</b> addon for Godot Engine that introduces a GDScript Terminal.<br />Run GDScript code in the editor at the click of a button to speed up your workflow.",
 		img: "assets/images/gdterminal_cover_315px.webp",
@@ -46,7 +54,7 @@ for (project of projects) {
 	innerDiv.append(p);
 	const a = document.createElement("a");
 	a.target = "_blank";
-	a.textContent = project.type == "tool" ? "More Details" : "View on Itch";
+	a.textContent = "linktext" in project ? project.linktext : project.type == "tool" ? "More Details" : "View on Itch";
 	a.href = project.href;
 	innerDiv.append(a);
 	outerDiv.append(innerDiv);
