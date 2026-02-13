@@ -8,13 +8,6 @@ const projects = [
 		type: "game",
 	},
 	{
-		name: "GDTerminal",
-		desc: "GDTerminal is a <b>free</b> addon for Godot Engine that introduces a GDScript Terminal.<br />Run GDScript code in the editor at the click of a button to speed up your workflow.",
-		img: "assets/images/gdterminal_cover_315px.webp",
-		href: "/GDTerminal/",
-		type: "tool",
-	},
-	{
 		name: "Orbis",
 		desc: "Orbital color matching game.<br />Winner of the Indie Den Godot Jam.",
 		img: "assets/images/orbis_cover_315px.webp",
@@ -34,6 +27,13 @@ const projects = [
 		img: "assets/images/silversea_cover_315px.webp",
 		href: "https://programmeroncoffee.itch.io/silversea",
 		type: "game",
+	},
+	{
+		name: "GDTerminal",
+		desc: "GDTerminal is a <b>free</b> addon for Godot Engine that introduces a GDScript Terminal.<br />Run GDScript code in the editor at the click of a button to speed up your workflow.",
+		img: "assets/images/gdterminal_cover_315px.webp",
+		href: "/GDTerminal/",
+		type: "tool",
 	},
 ]
 
