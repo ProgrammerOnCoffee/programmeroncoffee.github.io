@@ -15,17 +15,17 @@ const projects = [
 		type: "game",
 	},
 	{
-		name: "Ricochet",
-		desc: "Bullet-bouncing puzzle game.<br />Created for the Mini Code for a Cause jam.",
-		img: "assets/images/ricochet_cover_315px.webp",
-		href: "https://programmeroncoffee.itch.io/ricochet",
-		type: "game",
-	},
-	{
 		name: "Silversea",
 		desc: "Journey out to sea on a beautiful day.<br />Created for the 81st Godot Wild Jam.",
 		img: "assets/images/silversea_cover_315px.webp",
 		href: "https://programmeroncoffee.itch.io/silversea",
+		type: "game",
+	},
+	{
+		name: "Ricochet",
+		desc: "Bullet-bouncing puzzle game.<br />Created for the Mini Code for a Cause jam.",
+		img: "assets/images/ricochet_cover_315px.webp",
+		href: "https://programmeroncoffee.itch.io/ricochet",
 		type: "game",
 	},
 	{
