@@ -4,14 +4,14 @@
 }
 .project {
 	display: grid;
-	margin: 20px;
+	margin: 0px var(--margin_m);
 	grid-template-columns: 1fr 2fr;
 	align-items: center;
 	
 	@media (width < 604px) {
 		grid-template-columns: 1fr;
 		img {
-			margin-bottom: 10px;
+			margin-bottom: var(--margin_m);
 		}
 	}
 	
@@ -23,7 +23,10 @@
 		justify-self: center;
 	}
 	div {
-		margin: 10px 20px;
+		margin: var(--margin_m) var(--margin_l);
 		text-align: left;
 	}
+}
+.project:not(:first-child) {
+	margin-top: var(--margin_l);
 }

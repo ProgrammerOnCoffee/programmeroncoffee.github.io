@@ -56,6 +56,9 @@
 	--light_link_color: color-mix(in oklab, var(--link_color), white 25%);
 	--bg_primary: #32283f;
 	--bg_secondary: color-mix(in oklab, var(--bg_primary), black 75%);
+	--margin_l: 20px;
+	--margin_m: 10px;
+	--margin_s: 5px;
 	
 	background: linear-gradient(-0.125turn, var(--bg_secondary), var(--bg_primary)) no-repeat;
 	color: var(--text_color);
@@ -72,6 +75,7 @@ body {
 
 	hr {
 		width: 100%;
+		margin: 0px;
 	}
 
 	max-width: 768px;
@@ -79,7 +83,7 @@ body {
 
 main {
 	flex-grow: 1;
-	margin: 0px 10px;
+	margin: 0px var(--margin_m);
 }
 .center {
 	align-content: center;
@@ -89,15 +93,15 @@ header, footer {
 	flex-shrink: 0;
 }
 header {
-	margin-top: 8px;
+	margin-top: var(--margin_l);
 }
 footer {
-	margin-bottom: 8px;
+	margin: var(--margin_m);
 }
 footer > * {
 	display: inline-block;
 	vertical-align: middle;
-	margin: 5px;
+	margin: var(--margin_s);
 }
 
 img {
@@ -108,16 +112,17 @@ img {
 	img {
 		border-radius: 5px;
 		width: 100%;
-		margin: 5px 0px;
+		margin: var(--margin_s) 0px;
 	}
 }
 
 li {
-	margin: 5px 0px;
+	margin: var(--margin_s) 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "JetBrains Mono", monospace;
+	margin: var(--margin_l) 0px;
 }
 
 /* Link styles */
@@ -159,7 +164,7 @@ abbr {
 	}
 }
 .feature {
-	margin: 10px;
+	margin: var(--margin_m);
 	
 	h3 {
 		text-align: center;

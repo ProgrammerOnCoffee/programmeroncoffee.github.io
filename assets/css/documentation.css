@@ -25,7 +25,7 @@ pre {
 	border-radius: 5px;
 	font-family: "JetBrains Mono", monospace;
 	padding: 10px;
-	margin: 10px 0px;
+	margin: var(--margin_m) 0px;
 	code {
 		background: none;
 		margin: 0px;
