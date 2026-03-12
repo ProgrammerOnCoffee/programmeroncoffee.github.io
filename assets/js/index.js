@@ -28,13 +28,6 @@ const projects = [
 		href: "https://programmeroncoffee.itch.io/ricochet",
 		type: "game",
 	},
-	{
-		name: "GDTerminal",
-		desc: "GDTerminal is a <b>free</b> addon for Godot Engine that introduces a GDScript Terminal.<br />Run GDScript code in the editor at the click of a button to speed up your workflow.",
-		img: "assets/images/gdterminal_cover_315px.webp",
-		href: "/GDTerminal/",
-		type: "tool",
-	},
 ]
 
 for (project of projects) {
