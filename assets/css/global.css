@@ -44,7 +44,7 @@
 @font-face {
 	font-family: "JetBrains Mono";
 	font-display: swap;
-	src: url("/asssets/fonts/JetBrains_Mono/JetBrainsMono-Bold.ttf") format("truetype");
+	src: url("/assets/fonts/JetBrains_Mono/JetBrainsMono-Bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: bold;
 }
