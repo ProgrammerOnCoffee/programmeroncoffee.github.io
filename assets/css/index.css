@@ -22,7 +22,7 @@
 		border-radius: 5px;
 		justify-self: center;
 	}
-	div {
+	> div:last-child {
 		margin: var(--margin_m) var(--margin_l);
 		text-align: left;
 	}

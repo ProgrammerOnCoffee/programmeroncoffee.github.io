@@ -33,11 +33,13 @@ const projects = [
 for (project of projects) {
 	var outerDiv = document.createElement("div");
 	outerDiv.className = "project";
+	
 	const img = document.createElement("img");
 	img.src = project.img;
 	img.alt = project.name + " cover";
 	outerDiv.append(img);
-
+	generateDropGlow(img);
+	
 	const innerDiv = document.createElement("div");
 	const h2 = document.createElement("h2");
 	h2.textContent = project.name;

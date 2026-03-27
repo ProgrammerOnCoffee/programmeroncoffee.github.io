@@ -180,6 +180,29 @@ abbr {
 	img {
 		transition: filter 500ms;
 	}
+	div.drop_glow {
+		position: relative;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		margin-bottom: -5px;
+		
+		img:last-child {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+		img:first-child {
+			position: relative;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
 }
 .main_column > .feature {
 	max-width: 556px;
@@ -194,5 +217,8 @@ abbr {
 	
 	img {
 		filter: brightness(110%);
+	}
+	div.drop_glow > img:first-child {
+		filter: blur(6px) brightness(120%);
 	}
 }
