@@ -140,6 +140,21 @@ a:hover {
 abbr {
 	text-decoration-color: var(--link_color);
 }
+.icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+a.icon {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	padding: 5px;
+	margin: 0px 5px;
+	img {
+		color: var(--text_color);
+	}
+}
 
 .columns {
 	display: inline-grid;
