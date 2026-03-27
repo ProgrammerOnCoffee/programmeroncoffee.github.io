@@ -8,6 +8,13 @@ const projects = [
 		type: "game",
 	},
 	{
+		name: "Kunoichi",
+		desc: "A stealth-action game where you steal a relic from a mysterious base.<br />Created with <a href=\"https://kyveri.carrd.co/\" target=\"_blank\">Kyveri</a> and <a href=\"https://undinesoundworks.carrd.co/\" target=\"_blank\">Undine Soundworks</a> for the 91st Godot Wild Jam.",
+		img: "assets/images/kunoichi_cover_315px.webp",
+		href: "https://programmeroncoffee.itch.io/kunoichi",
+		type: "game",
+	},
+	{
 		name: "Orbis",
 		desc: "Orbital color matching game.<br />Winner of the Indie Den Godot Jam.",
 		img: "assets/images/orbis_cover_315px.webp",
