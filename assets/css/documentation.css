@@ -8,6 +8,12 @@
 .doc {
 	text-align: left;
 }
+header + hr {
+	margin-top: var(--margin_l);
+}
+main + hr {
+	margin-top: var(--margin_m);
+}
 
 /* Keys & Code Samples */
 kbd, code {
