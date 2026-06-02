@@ -1,0 +1,63 @@
+:root {
+	scroll-behavior: smooth;
+}
+ul {
+	max-width: 70%;
+	align-self: center;
+	justify-self: center;
+	text-align: left;
+}
+.left {
+	text-align: left;
+}
+
+
+#project-list, #media-list, #music-list {
+	align-items: stretch;
+	place-content: stretch;
+	margin-bottom: var(--margin_l);
+}
+.project, .music {
+	display: grid;
+	margin: 0px var(--margin_m);
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+	
+	@media (width < 604px) {
+		grid-template-columns: 1fr;
+		img {
+			margin-bottom: 10px;
+		}
+	}
+	
+	h2 {
+		margin: 0px;
+	}
+	img {
+		border-radius: 5px;
+		justify-self: center;
+	}
+	> div:last-child {
+		margin: 10px 20px;
+		text-align: left;
+	}
+}
+
+.screenshot {
+	display: grid;
+	justify-items: center;
+	max-width: 100%;
+	margin: 0px var(--margin_m);
+	img {
+		border-radius: 5px;
+	}
+	> :not(:first-child) {
+		margin-top: 12px;
+	}
+}
+.project:not(:first-child), .screenshot:not(:first-child), .music:not(:first-child) {
+	margin-top: var(--margin_l);
+}
+.caption {
+	font-style: italic !important;
+}

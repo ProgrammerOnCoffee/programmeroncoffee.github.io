@@ -72,13 +72,15 @@ body {
 	padding: 0px;
 	margin: 0px 16px;
 	min-height: 100vh;
-
+	max-width: 768px;
+	
 	hr {
 		width: 100%;
 		margin: 0px;
 	}
-
-	max-width: 768px;
+	h1, h2, h3, h4, main, .project, .screenshot, .music {
+		overflow: hidden;
+	}
 }
 
 main {
@@ -167,6 +169,9 @@ a.icon {
 	.columns {
 		grid-template-columns: 2fr;
 	}
+	body {
+		max-width: calc(100vw - var(--margin_l) * 2);
+	}
 }
 
 /* Projects & Features */
@@ -185,7 +190,7 @@ a.icon {
 		text-align: center;
 	}
 }
-.feature, .project {
+.feature, .project, .screenshot, .music {
 	padding: 15px;
 	border-radius: 10px;
 	transition-duration: 500ms;
@@ -224,7 +229,7 @@ a.icon {
 	display: inline-block;
 	box-sizing: border-box;
 }
-.feature:hover, .project:hover {
+.feature:hover, .project:hover, .screenshot:hover, .music:hover {
 	scale: 1.01;
 	transform: translateY(-5px);
 	border-color: var(--light_link_color);
